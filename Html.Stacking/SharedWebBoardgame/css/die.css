@@ -1,0 +1,29 @@
+.die_wrapper {
+  display: grid;
+  grid-auto-rows: auto;
+  margin: 10px;
+  gap: 0px;
+}
+.die_wrapper .die_face {
+  background-color: rgb(255, 255, 255);
+  outline: 2px solid #000000;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.die_wrapper .die_face .die_image {
+  height: auto;
+}
+
+.d6.die_wrapper {
+  grid-template-columns: repeat(3, auto);
+}
+
+.d8.die_wrapper {
+  grid-template-columns: repeat(4, auto);
+}
+
+/*# sourceMappingURL=die.css.map */

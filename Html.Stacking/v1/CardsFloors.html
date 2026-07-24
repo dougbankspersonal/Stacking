@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../SharedWebBoardgame/css/main.css" />
+    <link rel="stylesheet" href="../SharedWebBoardgame/css/image.css" />
+    <link rel="stylesheet" href="../SharedWebBoardgame/css/card.css" />
+    <link rel="stylesheet" href="../css/cards-stories.css" />
+    <link rel="stylesheet" href="../css/stacking-image.css" />
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <style type="text/css"></style>
+  </head>
+
+  <body id="body">
+    <!-- configure Dojo -->
+    <script>
+      // Instead of using data-dojo-config, we're creating a dojoConfig
+      // object *before* we load dojo.js; they're functionally identical,
+      // it's just easier to read this approach with a larger configuration.
+      var dojoConfig = {
+        baseUrl: "..",
+        async: true,
+        // This code registers the correct location of the "demo"
+        // package so we can load Dojo from the CDN whilst still
+        // being able to load local modules
+        packages: [
+          { name: "dojo", location: "../../bower_components/dojo" },
+          { name: "javascript", location: "javascript" },
+          {
+            name: "sharedJavascript",
+            location: "SharedWebBoardgame/javascript",
+          },
+        ],
+      };
+    </script>
+    <!-- load Dojo -->
+    <script src="../../../bower_components/dojo/dojo.js"></script>
+
+    <script>
+      require([
+        "sharedJavascript/cards",
+        "sharedJavascript/debugLog",
+        "sharedJavascript/genericUtils",
+        "sharedJavascript/systemConfigs",
+        "javascript/cardsData",
+        "javascript/cardsFloors",
+      ], function (
+        cards,
+        debugLog,
+        genericUtils,
+        systemConfigs,
+        cardsData,
+        cardsFloors,
+      ) {
+        var sc = systemConfigs.getCardSystemConfigs();
+        systemConfigs.setSystemConfigs(sc);
+
+        var numCards = cardsData.getNumCardConfigs();
+        debugLog.debugLog("Html", "numCards = " + numCards);
+
+        // See joinedItemCardConfigs.js for the groupings here:
+        /*
+          var clusteredPieceTypes = [
+            [parameters.Wrap, parameters.Hat],
+            [parameters.Top, parameters.Bottom],
+            [parameters.Shoes, parameters.Accessory],
+          ];
+          */
+        cards.addCards(numCards, cardsFloors.addNthCard, [
+          {
+            callback: function (parent, index) {
+              return cardsFloors.addCardBack(parent);
+            },
+          },
+        ]);
+
+        /*
+                // Delay scaling for 0ms to allow DOM updates to apply
+                setTimeout(() => {
+                  joinedItemCards.doInstanceNameTextScalingForAllCards(numItemCards);
+                }, 500);
+        */
+        debugLog.debugLog(
+          "ScalingText",
+          "Doug: called doInstanceNameTextScalingForAllCards.  Did it finish?",
+        );
+      });
+    </script>
+  </body>
+</html>

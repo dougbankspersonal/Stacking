@@ -1,0 +1,195 @@
+// All cards.
+.story.front.card {
+  border-radius: 10px;
+  border: 5px solid black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .zone {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bold;
+    font-family: "Orbitron", sans-serif;
+    position: relative;
+    border-top: 2px solid #aaaaaa;
+
+    .extra-power.pseudo-image {
+      height: 80%;
+      width: 80%;
+      position: absolute;
+      z-index: 1;
+      filter: drop-shadow(4px 6px 6px rgba(0, 0, 0, .45));
+      opacity: 0.5;
+    }
+  }
+
+  .story-number {
+    position: absolute;
+    z-index: 2;
+    font-size: 60px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    color: #000000;
+    -webkit-text-stroke: 1px #ffffff;
+    text-shadow:
+      -1px -1px 0 #ffffff,
+      1px -1px 0 #ffffff,
+      -1px 1px 0 #ffffff,
+      1px 1px 0 #ffffff;
+
+  }
+}
+
+.zone.primary {
+  transform: rotate(180deg);
+}
+
+
+/* ===========================
+   GOLD
+   =========================== */
+
+.zone.color-0 {
+  .story-number {
+    border-bottom: 10px solid #665500;
+  }
+
+  color: #665500;
+
+  background: linear-gradient(145deg,
+    #fffced 0%,
+    #fce9b0 35%,
+    #dbb14a 70%,
+    #9f7120 100%);
+}
+
+/* ===========================
+   GREEN
+   =========================== */
+
+.zone.color-1 {
+  .story-number {
+    border-bottom: 10px solid #004400;
+  }
+
+  background: linear-gradient(145deg,
+    #eefceb 0%,
+    #cfeecb 35%,
+    #89c989 70%,
+    #3d7444 100%);
+}
+
+
+/* ===========================
+   RED
+   =========================== */
+
+.zone.color-2 {
+  .story-number {
+    border-bottom: 10px solid #440000;
+  }
+
+  background: linear-gradient(145deg,
+    #fff0f0 0%,
+    #ffd1d1 35%,
+    #dd7d7d 70%,
+    #963737 100%);
+}
+
+
+/* ===========================
+   BLUE
+   =========================== */
+.zone.color-3 {
+  .story-number {
+    border-bottom: 10px solid #000044;
+  }
+
+  background: linear-gradient(145deg,
+    #edf6ff 0%,
+    #cbe2fa 35%,
+    #7fa8d6 70%,
+    #35648f 100%);
+}
+
+/* ===========================
+   PURPLE
+   =========================== */
+
+.zone.color-4 {
+  .story-number {
+    border-bottom: 10px solid #330044;
+  }
+
+  background: linear-gradient(145deg,
+    #faf0ff 0%,
+    #e6ccf6 35%,
+    #b07ed8 70%,
+    #6c3896 100%);
+}
+
+/* ===========================
+   EXTRA
+   =========================== */
+.zone.color-10,
+.zone.color-11 {
+  .story-number {
+    border-bottom: 10px solid #4d5662;
+  }
+
+  background: linear-gradient(145deg,
+    #ffffff 0%,
+    #f9f9f9 35%,
+    #e8e8e8 70%,
+    #a9a9a9 100%);
+}
+
+.story.back.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(145deg,
+      #0d1b2a 0%,
+      #1b263b 35%,
+      #415a77 70%,
+      #778da9 100%);
+
+  .title {
+    width: 100%;
+    font-weight: bold;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: #f2f4f8;
+    -webkit-text-stroke: 2px #ffd700;
+
+    text-shadow:
+      -1px -1px 0 #444,
+      1px -1px 0 #444,
+      -1px 1px 0 #444,
+      1px 1px 0 #444;
+
+    transform: rotate(90deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200%;
+
+    .sub {
+      font-size: 40px;
+    }
+
+    .main {
+      font-size: 60px;
+    }
+  }
+}

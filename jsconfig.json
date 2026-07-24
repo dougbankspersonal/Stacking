@@ -1,0 +1,19 @@
+{
+  "include": [
+    "**/*.js",
+    "global.d.ts"
+  ],
+  "compilerOptions": {
+    "checkJs": true,
+
+    "noImplicitAny": false,
+    "strict": false,
+
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+
+  "exclude": [
+    "bower_components"
+  ]
+}
