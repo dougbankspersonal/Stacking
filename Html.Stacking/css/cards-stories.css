@@ -83,6 +83,16 @@
 }
 
 /* ===========================
+   PURPLE
+   =========================== */
+.zone.color-4 {
+  background: linear-gradient(145deg, #faf0ff 0%, #e6ccf6 35%, #b07ed8 70%, #6c3896 100%);
+}
+.zone.color-4 .story-number {
+  border-bottom: 10px solid #330044;
+}
+
+/* ===========================
    EXTRA
    =========================== */
 .zone.color-10,

@@ -10,10 +10,12 @@ define([
 
   const gNumCardColors = 5;
   const gMaxStories = 6;
-  const gNumCopies = 4;
+  const gNumCopies = 3;
   const gMixExtraColorIndex = 10;
   const gWildCardPrimaryColorIndex = gMixExtraColorIndex;
   const gWildCardSecondaryColorIndex = gMixExtraColorIndex + 1;
+
+  const gUseWildCardConfigs = false;
 
   console.assert(
     gMixExtraColorIndex >= gNumCardColors,
@@ -127,7 +129,9 @@ define([
     var cardConfigs = [];
 
     cardConfigs = addColoredCardConfigs(cardConfigs);
-    cardConfigs = addWildCardConfigs(cardConfigs);
+    if (gUseWildCardConfigs) {
+      cardConfigs = addWildCardConfigs(cardConfigs);
+    }
     return cardConfigs;
   }
 
